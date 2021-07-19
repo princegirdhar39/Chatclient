@@ -13,21 +13,25 @@ const Join = () => {
         setRoom(e.target.value);
     }
     return(
-        <div className="join__outer">
-            <div className="join__inner">
+        <div className="joinOuterContainer">
+            <div className="joinInnerContainer">
                 <h1 className="heading">
-                    join
+                    Join
 
                 </h1>
-                <div><input placeholder="Name" className="joinInput1" type="text" onchange={nameHandler} /> </div>
-                <div><input placeholder="Room" className="joinInput2" type="text" onchange={roomHandler} /> </div>
-                <Link onclick={(event)=> (!name || !room)? event.preventDefault : null} to ={`/chat?name=${name}&room=${room}`}>
-                <div className="button">
-                    <button type="submit" className="button">SignIN</button>
-                </div>
+                <div>
+                    <input placeholder="Name" className="joinInput" type="text" onChange={nameHandler} />
+                     </div>
+                <div><input placeholder="Room" className="joinInput mt-20" type="text" onChange={roomHandler} /> </div>
+                <Link onClick={(event)=> (!name || !room)? event.preventDefault : null} to ={`/chat?name=${name}&room=${room}`}>
+              
+                    <button type="submit" className="button mt-20">SignIN</button>
+             
                 </Link>
 
             </div>
+           
+            
         </div>
 
     )
